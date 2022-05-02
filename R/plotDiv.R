@@ -1,4 +1,4 @@
-barPlot <- function(id) {
+plotDiv <- function(id) {
   ns <- NS(id)
   tagList(
     div(

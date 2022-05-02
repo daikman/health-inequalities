@@ -1,8 +1,8 @@
 library(shiny)
 library(dplyr)
 
-# import all modules
-path <- "./modules"
+# import all modules and scripts
+path <- "./R"
 mods <- dir(path)
 for (mod in mods) {
   source(paste0(path, "/", mod))
@@ -10,26 +10,37 @@ for (mod in mods) {
 
 # define app
 ui <- fixedPage(
+  # define lineColours variable in js
+  # used for inputs and plots
+  tags$script(paste0(
+    "const lineColours = ", jsonlite::toJSON(lineColours)
+  )),
+
+  # apply general css
+  theme = "custom.css",
+
+  # set up scroll events
+  scrollHeightInput(),
+
+  # responsive routing
+  # window narrower than 766px renders smallApp()
+  # wider renders bigApp()
   windowWidthInput(),
-  # includeCSS("./www/responsive.css"),
-  conditionalPanel("input.width <= 766",
+  conditionalPanel("input.width < 766",
     smallApp()
   ),
-  conditionalPanel("input.width > 766",
+  conditionalPanel("input.width >= 766",
     bigApp()
-  )
+  ),
+  # button and modal for information
+  infoModal("info")
 )
 
 server <- function(input, output, session) {
 
-  lapply(config, function(resource) {
-    # insert server for all plots (small and big screens)
-    plotServer(resource, small = TRUE)
-    plotServer(resource, small = FALSE)
-  })
+  appServer("small")
+  appServer("big")
 
-
-  contentServer("content")
 }
 
 # run app

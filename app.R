@@ -10,6 +10,7 @@ for (mod in mods) {
 
 # define app
 ui <- fixedPage(
+  title = "Health Inequalities in Scotland",
   # define lineColours variable in js
   # used for inputs and plots
   tags$script(paste0(

@@ -1,7 +1,7 @@
 # Health Inequalities in Scotland
 
 This app shows show examples of how more 'deprived' areas have poorer health outcomes.
-The data is all from the [Public Health Scotland's Open Data portal](https://www.opendata.nhs.scot/), which I manage at the time of writing. I built the app using R Shiny.
+The data is all from the [Public Health Scotland's Open Data portal](https://www.opendata.nhs.scot/), which I manage at the time of writing. I built the app using R Shiny. It requires the installation of [{phsopendata}](https://github.com/Public-Health-Scotland/phsopendata) for retrieving the data on app start.
 
 ## Responsive 'routing'
 

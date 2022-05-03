@@ -1,0 +1,13 @@
+name: health-deprivation
+title: health-deprivation
+username:
+account: daikman
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6218042
+bundleId: 5863682
+url: https://daikman.shinyapps.io/health-deprivation/
+when: 1651567554.27904
+lastSyncTime: 1651567554.27906
+asMultiple: FALSE
+asStatic: FALSE

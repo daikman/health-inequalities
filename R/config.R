@@ -1,3 +1,5 @@
+library(dplyr)
+
 lineColours <- c(
   "rgb(100, 200, 200)", "rgb(200, 100, 200)", "rgb(200, 200, 100)"
 )

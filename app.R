@@ -1,11 +1,11 @@
-library(shiny)
 library(dplyr)
+library(shiny)
 
 # import all modules and scripts
 path <- "./R"
-mods <- dir(path)
-for (mod in mods) {
-  source(paste0(path, "/", mod))
+files <- dir(path)
+for (file in files) {
+  source(paste0(path, "/", file))
 }
 
 # define app

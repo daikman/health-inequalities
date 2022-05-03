@@ -1,3 +1,5 @@
+library(dplyr)
+
 d3Plot <- function(resource, selected_metrics, all_metrics) {
   data <- resource$data %>%
     rename("SIMD" = resource$SIMD) %>%
